@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+
+
+<main role="main">
+
+    <section class="jumbotron text-center bg-primary">
+        <div class="container">
+            <h1 class="text-white">Clasificador de Productos para el hogar</h1>
+            <p class="text-dark">Aplicación web para realizar analisis de sentimiento</p>
+        </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                {% for producto in productos%}
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="{{producto.2}}" class="img-fluid bd-placeholder-img card-img-top"
+                            alt="Responsive image">
+
+                        <div class="card-body">
+                            <h4 class="card-title">{{producto.1}}</h4>
+                            <p class="card-text">{{producto.3}}</p>
+                            <div class="d-flex justify-content-center mt-3 align-items-center">
+                                <a href="/producto/{{producto.0}}" class="btn btn-primary">Calificar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+
+</main>
+
+
+
+{% endblock %}
