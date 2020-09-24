@@ -85,7 +85,7 @@ def Calificar(id):
                 cur.execute('INSERT INTO opiniones (texto, subjetividad, polaridad, producto_id) VALUES (%s, %s, %s, %s)',
                             (text, textotraducido.subjectivity, textotraducido.polarity, id))
                 mysql.connection.commit()
-                flash("Producto calficiado con exito", category="exito")
+                flash("Producto calificado con éxito", category="exito")
 
                 return redirect(url_for('getProducto', id=id))
             except:
